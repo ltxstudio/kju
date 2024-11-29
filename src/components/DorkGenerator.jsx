@@ -1,36 +1,6 @@
 import { useState } from "react";
 import { FaRegCopy, FaMoon, FaSun, FaRegWindowClose, FaTrashAlt } from "react-icons/fa";
-
-// Dork Descriptions
-const dorkDescriptions = {
-  intitle: "Searches for a specific word in the title of a webpage.",
-  inurl: "Searches for a specific word in the URL of a webpage.",
-  intext: "Searches for a specific word in the body text of a webpage.",
-  filetype: "Finds files of a specific type (e.g., PDF, DOCX).",
-  site: "Restricts the search to a specific website or domain.",
-  inanchor: "Searches for a specific word in anchor text (links).",
-  cache: "Finds the cached version of a webpage.",
-  allintext: "Searches for multiple words in the body text of a webpage.",
-  allintitle: "Searches for multiple words in the title of a webpage.",
-  allinurl: "Searches for multiple words in the URL of a webpage.",
-  allinanchor: "Searches for multiple words in anchor text (links).",
-  link: "Finds pages that link to a specific URL.",
-  related: "Finds pages related to a specific URL.",
-  inpostauthor: "Searches for blog posts written by a specific author.",
-  inposttitle: "Searches for blog posts with a specific title.",
-  define: "Finds definitions of a specific term.",
-  phonebook: "Searches publicly available phonebooks.",
-  stocks: "Searches for stock market information.",
-  "inurl:index of": "Searches for open directory listings.",
-  "inurl:login": "Searches for login pages.",
-  "intitle:index of": "Searches for open directories in title.",
-  "site:.gov": "Restricts the search to government websites.",
-  "site:.edu": "Restricts the search to educational websites.",
-  "inurl:wp-admin": "Finds WordPress admin login pages.",
-  "inurl:admin": "Finds admin login pages.",
-  "ext:sql": "Searches for SQL database backup files.",
-  "ext:bak": "Searches for backup files.",
-};
+import { dorkTypes, dorkDescriptions } from '../data/dorks'; // Import the dork types and descriptions
 
 const DorkGenerator = () => {
   const [dorkType, setDorkType] = useState("intitle");
@@ -39,8 +9,6 @@ const DorkGenerator = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [dorkHistory, setDorkHistory] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const dorkTypes = Object.keys(dorkDescriptions);
 
   const handleGenerateDork = () => {
     if (!keywords) {
@@ -147,13 +115,14 @@ const DorkGenerator = () => {
             {dorkHistory.map((dork, index) => (
               <div key={index} className="bg-gray-100 p-2 rounded-md flex justify-between items-center">
                 <p>{dork}</p>
-                <button onClick={() => handleDeleteHistory(dork)} className="text-red-500">
+                <button onClick={() => handleDeleteHistory(dork)} className="text-red-500 hover:text-red-700">
                   <FaTrashAlt />
                 </button>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );
