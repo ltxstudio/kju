@@ -71,5 +71,13 @@ export const dorkDescriptions = {
   "inurl:sftp": "Finds SFTP-related URLs.",
   "filetype:sqlite": "Searches for SQLite database files.",
   "inurl:ftp": "Searches for exposed FTP links.",
-  "intitle:password hash": "Finds pages containing password hash references."
+  "intitle:password hash": "Finds pages containing password hash references.",
+  "inurl:.env": "Searches for publicly exposed environment configuration files.",
+  "inurl:htpasswd": "Finds .htpasswd files, which may contain hashed credentials.",
+  "intitle:password file": "Searches for files containing password references.",
+  "intitle:change-password": "Searches for pages related to changing passwords.",
+  "inurl:reset-password": "Searches for password reset pages.",
+  "intitle:server status": "Searches for server status pages.",
+  "intitle:system information": "Finds system information or diagnostic pages.",
+  "intitle:database dump": "Searches for database dump files."
 };
